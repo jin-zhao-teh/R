@@ -1,0 +1,1 @@
+fetch('https://resource.readingplus.com/seereader/dist/js/app-182094d7462e2bd29810a') // api for the get request.then(response => response.json()).then(data => console.log(data));
