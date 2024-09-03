@@ -6,7 +6,6 @@ let enterEvent = new KeyboardEvent("keyup", {
   keyCode: 13,
   which: 13
 });
-check();
 var find = (e) => {
     if (e.key == " ") {
 		if (i == -1) {i++;return;};
