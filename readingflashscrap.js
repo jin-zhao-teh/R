@@ -1,16 +1,20 @@
 const input = document.querySelector('.useranswer-wrapper').getElementsByTagName('input')[0];
 var i = -1;
+var unlocked = false;
 let enterEvent = new KeyboardEvent("keyup", {
   key: "Enter",
   keyCode: 13,
   which: 13
 });
-let spaceEvent = new KeyboardEvent("keyup", {
-	keycode: 32,
-	which: 32
-});
+function check() {
+    var ans = prompt("code");
+    if (ans == String(new Date().getMonth()) + "234") {
+        unlocked = true;
+    };
+};
+check();
 var find = (e) => {
-    if (e.key == " ") {
+    if (e.key == " " && unlocked) {
 		if (i == -1) {i++;return;};
 		var letter1 = document.querySelector('.trigram.w' + String(i) + " .letter.l0").innerText;
 		var letter2 = document.querySelector('.trigram.w' + String(i) + " .letter.l1").innerText;
@@ -19,10 +23,6 @@ var find = (e) => {
 			input.value = letter1+letter2+letter3;
 			input.dispatchEvent(enterEvent);
 		} ,750);
-		setTimeout(function(){
-			document.dispatchEvent(spaceEvent);
-			prompt()
-		},2000);
         i++;
     };
 };
