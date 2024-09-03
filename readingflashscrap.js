@@ -6,15 +6,9 @@ let enterEvent = new KeyboardEvent("keyup", {
   keyCode: 13,
   which: 13
 });
-function check() {
-    var ans = prompt("code");
-    if (ans == String(new Date().getMonth()) + "234") {
-        unlocked = true;
-    };
-};
 check();
 var find = (e) => {
-    if (e.key == " " && unlocked) {
+    if (e.key == " ") {
 		if (i == -1) {i++;return;};
 		var letter1 = document.querySelector('.trigram.w' + String(i) + " .letter.l0").innerText;
 		var letter2 = document.querySelector('.trigram.w' + String(i) + " .letter.l1").innerText;
