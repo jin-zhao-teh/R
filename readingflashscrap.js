@@ -7,7 +7,7 @@ let enterEvent = new KeyboardEvent("keyup", {
   which: 13
 });
 var find = (e) => {
-    if (e.key == " ") {
+    if (e.key == " " && !input.checkVisibility()) {
 		if (i == -1) {i++;return;};
 		var letter1 = document.querySelector('.trigram.w' + String(i) + " .letter.l0").innerText;
 		var letter2 = document.querySelector('.trigram.w' + String(i) + " .letter.l1").innerText;
